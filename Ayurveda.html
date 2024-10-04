@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ayurvedic Plants - PlantVista</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #F4F4F4;
+      color: #333;
+    }
+header {
+  background-color: #E0F3E8;
+  height: 90px; /* Set a fixed height */
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+     .navbar {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo-container {
+      position: absolute;
+      top: 5px; /* Adjusted top spacing */
+      left: 15px; /* Adjusted left spacing */
+      z-index: 1000;
+    }
+
+    .logo-container img {
+      width: 80px; /* Adjust the size of the logo */
+      height: auto;
+      animation: vertical-rotate 10s linear infinite;
+    }
+
+    .navbar nav {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+    }
+
+    .navbar ul li {
+      margin-right: 20px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .actions {
+      margin-left: auto;
+    }
+
+    .c {
+      color: #1B854A;
+      text-decoration: none;
+    }
+
+    .actions .btn {
+      background-color: #1B854A;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+
+    .hero {
+      background: url("https://scontent.fvga1-2.fna.fbcdn.net/v/t39.30808-6/386736204_734932935313341_4604908151890392719_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=Yq6PUhFYyhEQ7kNvgG1x3Ns&_nc_ht=scontent.fvga1-2.fna&oh=00_AYAuPfnxE_K572uftWLm-5dcqFmZ4Gj_SravWyas6a2qbg&oe=66EF69FF") no-repeat center center/cover;
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      min-height: 70vh;
+    }
+
+    .hero-content h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.2em;
+    }
+
+    .ayurveda-info {
+      background-color: #fff;
+      padding: 50px;
+      text-align: center;
+    }
+
+    .ayurveda-info h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #1B854A;
+    }
+
+    .ayurveda-info p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .categories {
+      background-color: #F9F9F9;
+      padding: 50px;
+      text-align: center;
+    }
+
+    .categories h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #1B854A;
+    }
+
+    .category-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .category-box {
+      background-color: #E0F3E8;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .category-box h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .category-box p {
+      font-size: 1em;
+      margin-top: 5px;
+    }
+
+    .category-box:hover {
+      transform: scale(1.1); /* Zoom in on hover */
+    }
+
+    .category-icon {
+      font-size: 3em;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #E0F3E8;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Keyframes for vertical rotation */
+    @keyframes vertical-rotate {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="#"><img src="planting.png" alt="Planting Logo"></a>
+    </div>
+    <div class="navbar">
+      <nav>
+        <ul>
+          <li><a href="Main.html">Home</a></li>
+          <li><a href="doshas.html">Dosha Balance</a></li>
+          <li><a href="#">Virtual Tours</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <a href="#" class="btn">Join us</a>
+        <a href="#" class="btn">Contact us</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover Ayurvedic Plants</h1>
+      <p>Explore the diverse world of plants used in traditional Ayurvedic medicine to support your health and wellness.</p>
+    </div>
+  </section>
+
+  <section class="ayurveda-info">
+    <h2>What is Ayurveda?</h2>
+    <p>Ayurveda means "the science of life" (ayur means "life" and veda means "science" in Sanskrit). Ayurveda is a discipline of the upaveda or "auxiliary knowledge" in Vedic tradition. Ayurveda has its prime origin from Atharva-Veda and apart as a supplement of the Rig-Veda. Dhanvantari is worshipped as the God of Ayurveda.
+      The aim of this system is to prevent illness, heal the sick, and preserve life. Ayurveda has its origins from India and extended its wings to various parts of the world. Ayurveda was taught in the Gurukula system in ancient days, which has now evolved into undergraduate and postgraduate courses from institutions. Ayurveda is a holistic system of medicine from India that emphasizes balance in the body's systems through diet, herbal treatment, and yogic practices. It focuses on maintaining harmony between the mind, body, and spirit.</p>
+  </section>
+
+  <section class="categories">
+    <h2>Ayurvedic Plant Categories</h2>
+    <div class="category-grid">
+      <div class="category-box">
+        <span class="category-icon">🌿</span>
+        <h3><a class="c" href="doshas.html">Dosha Balance</a></h3>
+        <p>Plants to balance Vata, Pitta, and Kapha doshas.</p>
+      </div>
+      <div class="category-box">
+        <span class="category-icon">🍃</span>
+        <h3><a class="c" href="taste.html">Taste (Rasa)</a></h3>
+        <p>Plants categorized by their primary taste (sweet, sour, bitter, etc.).</p>
+      </div>
+      <div class="category-box">
+        <span class="category-icon">🌸</span>
+        <h3><a class="c" href="therapeutic.html">Therapeutic Action</a></h3>
+        <p>Plants categorized by their therapeutic effects (rejuvenative, digestive, etc.).</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 PlantVista. All rights reserved.</p>
+  </footer>
+</body>
+</html>

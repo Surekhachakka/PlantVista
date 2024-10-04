@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashwagandha - 3D Model and Details</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.min.js"></script>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            background-color: rgba(76, 175, 80, 0.85); /* Semi-transparent background */
+            padding: 20px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-family: 'Georgia', serif;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Category Heading Styling */
+        .category-heading {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(76, 175, 80, 0.85); /* Semi-transparent background */
+            color: white;
+        }
+
+        .category-heading h2 {
+            margin: 0;
+            font-size: 28px;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Plant Details Section */
+        .plant-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .plant-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .plant-info h2, .plant-info h3, .plant-info p {
+            margin: 10px 0;
+        }
+
+        /* Flexbox for Advantages and Disadvantages */
+        .advantages-disadvantages {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            width: 80%;
+        }
+
+        .plant-advantages, .plant-disadvantages {
+            padding: 20px;
+            width: 48%; /* Ensure they take up equal width */
+        }
+
+        .plant-medicinal-uses {
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #4CAF50;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: #555;
+        }
+
+        /* 3D Model Section */
+        .plant-3d-model {
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        #3d-model {
+            width: 100%;
+            height: 400px; /* Set height for the 3D model viewer */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Ashwagandha - PlantVista</h1>
+        <p>Explore the medicinal properties of Ashwagandha and view its 3D model.</p>
+    </header>
+
+    <!-- Category Heading -->
+    <section class="category-heading">
+        <h2>Vata Category</h2>
+    </section>
+
+    <!-- 3D Model Section -->
+    <section class="plant-3d-model">
+        <h2>3D Model of Ashwagandha</h2>
+        <div id="3d-model"></div> <!-- This is where the 3D model will render -->
+    </section>
+
+    <!-- Plant Details Section -->
+    <section class="plant-details">
+        <div class="plant-info">
+            <h2>Ashwagandha</h2>
+            <h3>Scientific Name: Withania somnifera</h3>
+            <p><strong>Medicinal Use:</strong> Ashwagandha is widely known for its adaptogenic properties, helping to reduce stress, boost vitality, and support the immune system.</p>
+        </div>
+
+        <!-- Advantages and Disadvantages Side by Side -->
+        <div class="advantages-disadvantages">
+            <section class="plant-advantages">
+                <h3>Advantages</h3>
+                <ul>
+                    <li>Reduces stress and anxiety by regulating cortisol levels.</li>
+                    <li>Improves energy and stamina.</li>
+                    <li>Enhances brain function and memory.</li>
+                    <li>Supports immune system and overall well-being.</li>
+                </ul>
+            </section>
+
+            <section class="plant-disadvantages">
+                <h3>Disadvantages</h3>
+                <ul>
+                    <li>May cause gastrointestinal discomfort in some individuals.</li>
+                    <li>Can interact with certain medications like immunosuppressants.</li>
+                    <li>Not recommended for pregnant or breastfeeding women without medical advice.</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Medicinal Uses Section -->
+        <section class="plant-medicinal-uses">
+            <h3>Medicinal Uses</h3>
+            <ul>
+                <li>Used as an adaptogen to reduce stress and fatigue.</li>
+                <li>Boosts immunity and promotes vitality.</li>
+                <li>Supports cognitive function and mental clarity.</li>
+                <li>Helps in managing conditions like insomnia and arthritis.</li>
+            </ul>
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 PlantVista. All rights reserved.</p>
+    </footer>
+
+    <!-- 3D Model Rendering Script -->
+    <script>
+        // Create scene, camera, and renderer for 3D model
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('3d-model').appendChild(renderer.domElement);
+
+        // Add lighting
+        const light = new THREE.DirectionalLight(0xffffff, 1);
+        light.position.set(0, 1, 1).normalize();
+        scene.add(light);
+
+        // Load the 3D model (Assuming the 3D model is in .glb or .gltf format)
+        const loader = new THREE.GLTFLoader();
+        loader.load('path_to_your_3d_model/plant_model.glb', function(gltf) {
+            scene.add(gltf.scene);
+            gltf.scene.position.set(0, 0, 0);
+        }, undefined, function(error) {
+            console.error(error);
+        });
+
+        camera.position.z = 5;
+
+        const animate = function() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        };
+
+        animate();
+    </script>
+</body>
+</html>

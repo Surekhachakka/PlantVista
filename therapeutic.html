@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #F4F4F4;
+    color: #333;
+}
+
+header {
+    background-color: #E0F3E8;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar .logo img {
+    max-height: 50px;
+}
+
+.navbar nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.actions {
+    margin-left: auto;
+}
+
+.actions .btn {
+    background-color: #1B854A;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.therapeutic-background {
+    background: url("https://wallpapers.com/images/high/therapeutic-desktop-3840-x-2560-9ey5nd5ynfrjzfv3.webp") no-repeat center center/cover;
+    padding: 50px 0;
+    position: relative;
+    min-height: 85vh;
+    text-align: center;
+}
+
+.categories {
+    padding: 50px;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.category-box {
+    background-color:  #E0F3E8;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 1 1 calc(33.333% - 40px); /* Adjust for spacing */
+    box-sizing: border-box;
+    transition: transform 0.3s ease; /* Smooth transition for zoom */
+}
+
+.category-box:hover {
+    transform: scale(1.1); /* Zoom-in effect on hover */
+}
+
+.category-box:nth-child(3n+1) {
+    margin-right: 0; /* Align first item in each row */
+}
+
+.category-box:nth-child(3n) {
+    margin-right: 0; /* Align third item in each row */
+}
+
+.category-box h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.category-box p {
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+.category-icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #1B854A;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+  </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Therapeutic Actions - PlantVista</title>
+ 
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="PlantVista Logo"></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="doshas.html">Dosha Balance</a></li>
+          <li><a href="taste.html">Taste</a></li>
+          <li><a href="therapeutic.html">Therapeutic Action</a></li>
+          <li><a href="#">Virtual Tours</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <a href="#" class="btn">Join us</a>
+        <a href="#" class="btn">Contact us</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="therapeutic-background">
+      <!-- Categories section -->
+      <section class="categories">
+        <div class="category-grid">
+          <div class="category-box">
+            <span class="category-icon">💊</span>
+            <h3>Anti-inflammatory</h3>
+            <p>Helps to reduce inflammation and soothe the body’s response to irritation.</p>
+            <a href="vata.html" class="btn">Learn More</a>
+          </div>
+          <div class="category-box">
+            <span class="category-icon">🧘</span>
+            <h3>Calmative</h3>
+            <p>Calmative herbs work to reduce stress and promote relaxation.</p>
+            <a href="vata.html" class="btn">Learn More</a>
+          </div>
+          <div class="category-box">
+            <span class="category-icon">🛡️</span>
+            <h3>Immunomodulator</h3>
+            <p>Enhances and balances the immune system for optimal health.</p>
+            <a href="vata.html" class="btn">Learn More</a>
+          </div>
+          <div class="category-box">
+            <span class="category-icon">🔥</span>
+            <h3>Digestive Stimulant</h3>
+            <p>Promotes digestion by stimulating the digestive fire (Agni).</p>
+            <a href="vata.html" class="btn">Learn More</a>
+          </div>
+          <div class="category-box">
+            <span class="category-icon">🌿</span>
+            <h3>Detoxifying</h3>
+            <p>Assists in cleansing and detoxifying the body of harmful substances.</p>
+            <a href="vata.html" class="btn">Learn More</a>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Dosha Balance - PlantVista</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #F4F4F4;
+      color: #333;
+    }
+
+    header {
+      background-color: white;
+      padding: 15px;
+      display: flex;
+      height : 93px;
+      justify-content: space-between;
+      align-items: center;
+    }
+.logo-container {
+      position: absolute;
+      top: 0px; /* Adjusted top spacing */
+      left: 15px; /* Adjusted left spacing */
+      z-index: 1000;
+    }
+
+    .logo-container img {
+      width: 80px; /* Adjust the size of the logo */
+      height: auto;
+      animation: vertical-rotate 10s linear infinite;
+    }
+
+
+    .a {
+      color: #1B854A;
+      text-decoration: none;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .navbar .logo img {
+      max-height: 50px;
+    }
+
+    .navbar nav {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+    }
+
+    .navbar ul li {
+      margin-right: 20px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .actions {
+      margin-left: auto;
+    }
+
+    .actions .btn {
+      background-color: #1B854A;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+
+    .dosha-background {
+      background: url("https://img.freepik.com/free-photo/elevated-view-herbs-arranged-white-background-with-copy-space-writing-text_23-2148092017.jpg?w=996&t=st=1726780257~exp=1726780857~hmac=132750377537c6c916f50d2eba5c95b4480a3cb558c04c3cfa37f70399db1449")
+        no-repeat center center / cover;
+      padding: 50px 0;
+      position: relative;
+      min-height: 85vh;
+      text-align: center;
+    }
+
+    .dosha-info h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .dosha-info p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    .categories {
+      padding: 50px;
+      background-color: transparent;
+    }
+
+    .categories h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #1B854A;
+      text-align: center;
+    }
+
+    .carousel-container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 70%; /* Adjust width to fit slides and gaps */
+  margin: 20px auto;
+  border-radius: 30px;
+  padding-top: 20px; /* Add padding to move slides down */
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 10s linear; /* Continuous sliding effect */
+  width: calc(100% * 6);  /* Adjust to number of slides */
+  margin-top: 20px; /* Add margin to move slides down */
+}
+
+
+    .category-box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      text-align: center;
+      min-width: 35%; /* Adjust based on container width */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 0 15px; /* Create gap between slides */
+    }
+
+    .category-box h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .category-box p {
+      font-size: 1em;
+      margin-top: 5px;
+    }
+
+    .category-icon {
+      font-size: 3em;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #1B854A;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .plant-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .plant-card {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 10px;
+      padding: 20px;
+      text-align: center;
+      width: 250px;
+      transition: transform 0.3s;
+    }
+
+    .plant-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .plant-card h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .plant-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #4CAF50;
+    }
+
+    .plant-card p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .plant-card button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .plant-card button:hover {
+      background-color: #45a049;
+    }
+
+    .plant-card:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes slideAnimation {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); } /* Move by the width of half the slides */
+    }
+
+    .carousel-slide {
+      animation: slideAnimation 10s infinite linear; /* Adjust duration as needed */
+    }
+
+ html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  width: 100%;
+  height: 60px;
+}
+
+
+/* Ensuring full-width container */
+.category-heading {
+  text-align: center; /* Center-aligns the text */
+  margin-top: 40px; /* Space above the heading */
+  margin-bottom: 20px; /* Space below the heading */
+  width: 100%; /* Ensures the container takes full width */
+  display: flex;
+  justify-content: center; /* Center contents horizontally */
+}
+
+.category-heading h2 {
+  font-size: 2.5em; /* Adjust font size as needed */
+  color: #1B854A; /* Adjust color as needed */
+  margin: 0; /* Remove default margin */
+}
+/* Keyframes for vertical rotation */
+    @keyframes vertical-rotate {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+
+
+  </style>
+</head>
+<body>
+  <header>
+<div class="logo-container">
+      <a href="#"><img src="planting.png" alt="Planting Logo"></a>
+    </div>
+
+    <div class="navbar">
+      <nav>
+        <ul>
+          <li><a href="Main.html">Home</a></li>
+          <li><a href="Plantvista(detail).html">Auryveda</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <a href="#" class="btn">Join us</a>
+        <a href="#" class="btn">Contact us</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="dosha-background">
+      <div class="dosha-info">
+        <h2>Doshas</h2>
+        <div class="carousel-container">
+          <div class="carousel-slide">
+            <div class="category-box">
+              <span class="category-icon">🌿</span>
+              <h3>Vata</h3>
+              <p>Vata dosha represents the elements of air and space...</p>
+              <a href="#vata" class="btn">Learn More</a> <!-- Updated href -->
+            </div>
+            <div class="category-box">
+              <span class="category-icon">🔥</span>
+              <h3>Pitta</h3>
+              <p>Pitta dosha represents the elements of fire and water...</p>
+              <a href="#pitta" class="btn">Learn More</a> <!-- Updated href -->
+            </div>
+            <div class="category-box">
+              <span class="category-icon">🌊</span>
+              <h3>Kapha</h3>
+              <p>Kapha dosha represents the elements of earth and water...</p>
+              <a href="#kapha" class="btn">Learn More</a> <!-- Updated href -->
+            </div>
+            <!-- Duplicate slides for seamless loop -->
+            <div class="category-box">
+              <span class="category-icon">🌿</span>
+              <h3>Vata</h3>
+              <p>Vata dosha represents the elements of air and space...</p>
+              <a href="#vata" class="btn">Learn More</a> <!-- Updated href -->
+            </div>
+            <div class="category-box">
+              <span class="category-icon">🔥</span>
+              <h3>Pitta</h3>
+              <p>Pitta dosha represents the elements of fire and water...</p>
+              <a href="#pitta" class="btn">Learn More</a> <!-- Updated href -->
+            </div>
+            <div class="category-box">
+              <span class="category-icon">🌊</span>
+              <h3>Kapha</h3>
+              <p>Kapha dosha represents the elements of earth and water...</p>
+              <a href="#kapha" class="btn">Learn More</a> <!-- Updated href -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vata Section -->
+    <section id="vata" class="category-heading"> <!-- Added id here -->
+      <header>
+        <h2>Vata Category</h2>
+      </header>
+    </section>
+
+    <section class="plant-cards">
+      <!-- Example Vata Plants -->
+      <div class="plant-card">
+        <img src="https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-wellness-centrum/en_US/sliced-images/global/articles/what%20is%20ashwagandha%20image.jpg?auto=format" alt="Ashwagandha">
+        <div class="details">
+          <h2>Ashwagandha</h2>
+          <h3>Scientific Name: Withania somnifera</h3>
+          <p>Benefits: Promotes physical and mental health...</p>
+        </div>
+        <button onclick="window.location.href='Ashwagandha_details.html'">More</button>
+
+      </div>
+
+        <div class="plant-card">
+            <img src="https://www.hkvitals.com/blog/wp-content/uploads/2023/09/900-8-2.jpg" alt="Licorice">
+            <div class="details">
+                <h2>Licorice</h2>
+                <h3>Scientific Name: Glycyrrhiza glabra</h3>
+                <p class="medicinal-use">Medicinal Use: Soothes sore throats and boosts the immune system.</p>
+                <button onclick="window.location.href='licorice-details.html'">More</button>
+            </div>
+        </div>
+
+        <div class="plant-card">
+            <img src="https://img.bebeautiful.in/www-bebeautiful-in/Benefits%20Of%20Ginger%20For%20Hair%20And%20Skin_MobileHomeFeature.jpg" alt="Ginger">
+            <div class="details">
+                <h2>Ginger</h2>
+                <h3>Scientific Name: Zingiber officinale</h3>
+                <p class="medicinal-use">Medicinal Use: Aids digestion and reduces nausea.</p>
+                <button onclick="window.location.href='ginger-details.html'">More</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Pitta Section -->
+    <section id="pitta" class="category-heading"> <!-- Added id here -->
+      <header>
+        <h2>Pitta Category</h2>
+      </header>
+    </section>
+
+    <section class="plant-cards">
+      <!-- Example Pitta Plants -->
+      <div class="plant-card">
+         
+          <img src="https://www.urtekrambeauty.se/globalassets/urtekram-beauty/inspiration-articles/ingredients/aloe.png" alt="Aloe Vera">
+          <h2>Aloe Vera</h2>
+          <h3>Scientific Name: Aloe barbadensis</h3>
+          <p>Medicinal Use: Skin healing and soothing.</p>
+          <button onclick="window.location.href='Aloevera_details.html'">More</button>
+      </div>
+
+      <div class="plant-card">
+          <img src="https://5.imimg.com/data5/QP/KA/MY-31565121/brahmi-28bacopa-monnieri-29-1000x1000.jpg" alt="Brahmi">
+          <h2>Brahmi</h2>
+          <h3>Scientific Name: Bacopa monnieri</h3>
+          <p>Medicinal Use: Enhances memory and cognitive function.</p>
+          <button onclick="window.location.href='brahmi-details.html'">More</button>
+      </div>
+
+
+        <div class="plant-card">
+          <img src="https://cdn.britannica.com/46/139046-050-68C68E11/Peppermint.jpg" alt="Peppermint">
+          <h2>Peppermint</h2>
+          <h3>Scientific Name: Mentha piperita</h3>
+          <p>Medicinal Use: Relieves headaches and indigestion.</p>
+          <button onclick="window.location.href='peppermint-details.html'">More</button>
+      </div>
+
+
+    </section>
+
+    <!-- Kapha Section -->
+    <section id="kapha" class="category-heading"> <!-- Added id here -->
+      <header>
+        <h2>Kapha Category</h2>
+      </header>
+    </section>
+
+    <section class="plant-cards">
+      <!-- Example Kapha Plants -->
+      <div class="plant-card">
+       <img src="https://5.imimg.com/data5/SELLER/Default/2024/4/408175279/VU/GT/LA/149550510/organic-turmeric-powder-500x500.jpg" alt="Turmeric">
+        <h2>Turmeric</h2>
+        <h3>Scientific Name: Curcuma longa</h3>
+        <p>Medicinal Use: Anti-inflammatory and antioxidant.</p>
+        <button onclick="window.location.href='Turmeric_details.html'">More</button>
+    </div>
+
+
+
+    <div class="plant-card">
+        <img src="https://assets.clevelandclinic.org/transform/LargeFeatureImage/65ddb397-7835-4b21-b30b-d123be3cb5c8/blackPepper-185067429-770x533-1_jpg" alt="Brahmi">
+        <h2>Black Pepper</h2>
+        <h3>Scientific Name: Piper nigrum</h3>
+        <p>Medicinal Use: Enhances digestion, improves circulation.</p>
+        <button onclick="window.location.href='brahmi-details.html'">More</button>
+    </div>
+
+
+      <div class="plant-card">
+        <img src="https://www.outdoorguide.com/img/gallery/10-ways-cinnamon-will-work-wonders-in-your-garden/intro-1706819344.webp" alt="Peppermint">
+        <h2>Cinnamon</h2>
+        <h3>Scientific Name: Cinnamomum verum</h3>
+        <p>Medicinal Use: Aids digestion, helps balance blood sugar levels.</p>
+        <button onclick="window.location.href='peppermint-details.html'">More</button>
+    </div>
+
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 PlantVista - All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garlic - 3D Model and Details</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> <!-- Include three.js -->
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+    
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            background-color: rgba(76, 175, 80, 0.85); /* Semi-transparent background */
+            padding: 20px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-family: 'Georgia', serif;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Category Heading Styling */
+        .category-heading {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(76, 175, 80, 0.85); /* Semi-transparent background */
+            color: white;
+        }
+
+        .category-heading h2 {
+            margin: 0;
+            font-size: 28px;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Plant Details Section */
+        .plant-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .plant-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .plant-info h2, .plant-info h3, .plant-info p {
+            margin: 10px 0;
+        }
+
+        /* Flexbox for Advantages and Disadvantages */
+        .advantages-disadvantages {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            width: 80%;
+        }
+
+        .plant-advantages, .plant-disadvantages {
+            padding: 20px;
+            width: 48%; /* Ensure they take up equal width */
+        }
+
+        /* Medicinal Uses Section Below the Flexbox */
+        .plant-medicinal-uses {
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            width: 80%; /* Centered and full width below */
+        }
+
+        .plant-medicinal-uses ul {
+            display: inline-block; /* Treat the list as a block to be centered */
+            text-align: left; /* Keep bullets and text left-aligned within the block */
+            list-style-position: inside; /* Ensure bullets stay aligned with text */
+        }
+
+        h3 {
+            color: #4CAF50;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: #555;
+        }
+
+        /* 3D Model Section */
+        .plant-3d-model {
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        #3d-model {
+            width: 100%;
+            height: 400px; /* Set height for the 3D model viewer */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Garlic - PlantVista</h1>
+        <p>Explore the medicinal properties of Garlic and view its 3D model.</p>
+    </header>
+
+    <!-- Category Heading -->
+    <section class="category-heading">
+        <h2>Pungent Category</h2>
+    </section>
+
+    <!-- 3D Model Section -->
+    <div class="plant-3d-model">
+        <h2>3D Model of Garlic</h2>
+        <div id="3d-model"></div> <!-- This is where the 3D model will render -->
+    </div>
+
+    <!-- Plant Details Section -->
+    <section class="plant-details">
+        <div class="plant-info">
+            <h2>Garlic</h2>
+            <h3>Scientific Name: Allium sativum</h3>
+            <p><strong>Medicinal Use:</strong> Garlic is renowned for its numerous health benefits, including its antibacterial, antiviral, and antifungal properties. It is commonly used to support cardiovascular health, boost immunity, and improve digestion.</p>
+        </div>
+
+        <!-- Advantages and Disadvantages Side by Side -->
+        <div class="advantages-disadvantages">
+            <section class="plant-advantages">
+                <h3>Advantages</h3>
+                <ul>
+                    <li>Supports cardiovascular health by helping to lower blood pressure and cholesterol levels.</li>
+                    <li>Enhances immune system function and provides protection against infections.</li>
+                    <li>Possesses anti-inflammatory and antioxidant properties that benefit overall health.</li>
+                    <li>Aids in digestion and may help alleviate symptoms of digestive disorders.</li>
+                </ul>
+            </section>
+
+            <section class="plant-disadvantages">
+                <h3>Disadvantages</h3>
+                <ul>
+                    <li>May cause gastrointestinal discomfort, including bloating and gas, in some individuals.</li>
+                    <li>Strong odor can be socially unpleasant and may cause bad breath.</li>
+                    <li>High doses may lead to potential interactions with anticoagulant medications.</li>
+                    <li>Not recommended for people with garlic allergies or those with certain medical conditions without medical advice.</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Medicinal Uses Section (Below Advantages and Disadvantages) -->
+        <section class="plant-medicinal-uses">
+            <h3>Medicinal Uses</h3>
+            <ul>
+                <li>Used to support cardiovascular health by reducing blood pressure and cholesterol.</li>
+                <li>Acts as a natural remedy for common colds and infections.</li>
+                <li>May help in managing symptoms of high blood sugar and diabetes.</li>
+                <li>Applied topically, it can be used to treat minor skin infections and wounds.</li>
+            </ul>
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 PlantVista. All rights reserved.</p>
+    </footer>
+
+    <!-- 3D Model Rendering Script -->
+    <script>
+        // Create scene, camera, and renderer for 3D model
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('3d-model').appendChild(renderer.domElement);
+
+        // Add lighting
+        const light = new THREE.DirectionalLight(0xffffff, 1);
+        light.position.set(0, 1, 1).normalize();
+        scene.add(light);
+
+        // Load the 3D model (Assuming the 3D model is in .glb or .gltf format)
+        const loader = new THREE.GLTFLoader();
+        loader.load('path_to_your_3d_model/plant_model.glb', function(gltf) {
+            scene.add(gltf.scene);
+            gltf.scene.position.set(0, 0, 0);
+        }, undefined, function(error) {
+            console.error(error);
+        });
+
+        camera.position.z = 5;
+
+        const animate = function() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        };
+
+        animate();
+    </script>
+</body>
+</html>

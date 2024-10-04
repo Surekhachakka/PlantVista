@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #F4F4F4;
+    color: #333;
+}
+
+header {
+    background-color: #E0F3E8;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar .logo img {
+    max-height: 50px;
+}
+
+.navbar nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.actions {
+    margin-left: auto;
+}
+
+.actions .btn {
+    background-color: #1B854A;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.taste-background {
+    background: url("https://artoflivingretreatcenter.org/wp-content/uploads/2021/08/six-tastes332.jpg.webp") no-repeat center center/cover;
+    padding: 50px 0;
+    position: relative;
+    min-height: 85vh;
+    text-align: center;
+}
+
+.categories {
+    padding: 50px;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.categories h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #1B854A;
+    text-align: center;
+}
+
+.category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: flex-start; /* Center categories in the container */
+}
+
+.category-box {
+    background-color: #E0F3E8;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+    width: calc(33.333% - 40px); /* Set width to 33.33% for three items in the first row */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    transition: transform 0.3s ease; /* Add smooth zoom effect */
+}
+
+.category-box:hover {
+    transform: scale(1.1); /* Zoom in on hover */
+}
+
+.category-box h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.category-box p {
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+.category-icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Make last two items full width in the second row */
+.category-box:nth-child(4),
+.category-box:nth-child(5) {
+    width: calc(50% - 40px); /* 50% width for the second row */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #1B854A;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+
+
+
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 60px;
+   
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    background-color: rgba(76, 175, 80, 0.85); /* Semi-transparent background */
+    padding: 20px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    font-family: 'Georgia', serif;
+}
+
+header p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Plant Card Section */
+.plant-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.plant-card {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+.plant-card img {
+    width: 100%;
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Ensures images cover the specified height without distortion */
+    border-radius: 8px; /* Rounded corners instead of circle for uniformity */
+    margin-bottom: 15px;
+}
+
+.plant-card h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.plant-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #4CAF50;
+}
+
+.plant-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.plant-card button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.plant-card button:hover {
+    background-color: #45a049;
+}
+
+.plant-card:hover {
+    transform: scale(1.05);
+}
+/* Category Heading Styling */
+.category-heading {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(76, 175, 80, 0.85); /* Semi-transparent background */
+    color: white;
+}
+
+.category-heading h2 {
+    margin: 0;
+    font-size: 28px;
+    font-family: 'Georgia', serif;
+}
+
+
+/* Footer Styling */
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Ensures the footer has a height */
+}
+  </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Taste Categories - PlantVista</title>
+ 
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="PlantVista Logo"></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="Main.html">Home</a></li>
+          <li><a href="doshas.html">Dosha Balance</a></li>
+          <li><a href="Plantvista(detail).html">Ayurvedic</a></li>
+       
+        </ul>
+      </nav>
+      <div class="actions">
+        <a href="#" class="btn">Join us</a>
+        <a href="#" class="btn">Contact us</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="taste-background">
+
+
+      <!-- Categories section now inside the background section -->
+      <section class="categories">
+        <div class="category-grid">
+          <div class="category-box">
+            <span class="category-icon">🍭</span>
+            <h3>Sweet (Madhura)</h3>
+            <p>Sweet taste helps to build tissues and balance Vata and Pitta doshas.</p>
+            <a href="vata.html" class="btn">Learn More</a>
+          </div>
+          <div class="category-box">
+            <span class="category-icon">🍋</span>
+            <h3>Sour (Amla)</h3>
+            <p>Sour taste stimulates digestion and balances Vata dosha.</p>
+            <a href="vata.html" class="btn">Learn More</a>
+          </div>
+          <div class="category-box">
+            <span class="category-icon">🍃</span>
+            <h3>Bitter (Tikta)</h3>
+            <p>Bitter taste is detoxifying and helps to balance Pitta dosha.</p>
+            <a href="vata.html" class="btn">Learn More</a>
+          </div>
+          <div class="category-box">
+            <span class="category-icon">🌶️</span>
+            <h3>Pungent (Katu)</h3>
+            <p>Pungent taste aids digestion and balances Kapha dosha.</p>
+            <a href="vata.html" class="btn">Learn More</a>
+          </div>
+          <div class="category-box">
+            <span class="category-icon">🌰</span>
+            <h3>Astringent (Kashaya)</h3>
+            <p>Astringent taste helps to balance Pitta dosha and is useful in toning tissues.</p>
+            <a href="vata.html" class="btn">Learn More</a>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="category-heading">
+      <h2>Sweet (Madhura)
+Category</h2>
+  </section>
+  
+  <section class="plant-cards">
+      <!-- Example Vata Plants -->
+      <div class="plant-card">
+          <img src="https://cdn.loveandlemons.com/wp-content/uploads/2020/03/fennel-bulb.jpg" alt="Turmeric">
+          <h2>Fennel </h2>
+          <h3>Scientific Name:Foeniculum vulgare </h3>
+          <p>Medicinal Use: Cooling, sweet, and aids digestion.</p>
+          <button onclick="window.location.href='Fennel_details.html'">More</button>
+      </div>
+
+
+
+      
+
+         </section>
+
+
+         <section class="category-heading">
+          <h2>Sour (Amla)
+   Category</h2>
+      </section>
+      
+      <section class="plant-cards">
+          <!-- Example Vata Plants -->
+          <div class="plant-card">
+              <img src="https://lukecoutinho.com/blog/wp-content/uploads/2021/12/The-Health-Benefits-of-Amla-1024x576.jpg" alt="Turmeric">
+              <h2>Amalaki  </h2>
+              <h3>Scientific Name:Emblica officinalis/Amla </h3>
+              <p>Medicinal Use: It's rich in Vitamin C.</p>
+              <button onclick="window.location.href='amla_details.html'">More</button>
+          </div>
+  
+  <div class="plant-card">
+              <img src="https://kumaribasket.com/wp-content/uploads/2020/09/Tamarind.jpg" alt="Turmeric">
+              <h2>Tamarind </h2>
+              <h3>Scientific Name:Tamarindus indica </h3>
+              <p>Medicinal Use: it aids in digestion.</p>
+              <button onclick="window.location.href='turmeric-details.html'">More</button>
+          </div>
+  <div class="plant-card">
+              <img src="https://seed2plant.in/cdn/shop/files/LIMON-snature.jpg" alt="Turmeric">
+              <h2> Lemon </h2>
+              <h3>Scientific Name:Citrus limon</h3>
+              <p>Medicinal Use: Refreshing and aids in digestion.</p>
+              <button onclick="window.location.href='turmeric-details.html'">More</button>
+          </div>
+  
+  
+             </section>
+
+
+
+             <section class="category-heading">
+              <h2>Bitter (Tikta)
+       Category</h2>
+          </section>
+          
+          <section class="plant-cards">
+              <!-- Example Vata Plants -->
+              <div class="plant-card">
+                  <img src="https://www.researchgate.net/profile/Richard-Ukpanukpong/publication/346511973/figure/fig1/AS:963912237318146@1606825994363/The-Andrographis-paniculata-plant-5-Castor-oil-has-long-been-used-commercially-as-a.jpg" alt="Andrographis">
+                  <h2>Andrographis </h2>
+                  <h3>Scientific Name:Andrographis paniculata </h3>
+                  <p>Medicinal Use: Immunity-boosting properties.</p>
+                  <button onclick="window.location.href='Andrographis_details.html'">More</button>
+              </div>     
+                 </section>
+
+                 <section class="category-heading">
+                  <h2>Pungent (Katu)
+           Category</h2>
+              </section>
+              
+              <section class="plant-cards">
+                  <!-- Example Vata Plants -->
+                  <div class="plant-card">
+                      <img src="https://static.toiimg.com/thumb/msid-105445525,imgsize-75676,width-400,resizemode-4/105445525.jpg" alt="Garlic">
+                      <h2>Garlic </h2>
+                      <h3>Scientific Name:Allium sativum </h3>
+                      <p>Medicinal Use:  health benefits, including boosting immunity.</p>
+                      <button onclick="window.location.href='Garlic_details.html'">More</button>
+                  </div>
+          
+          
+          
+                     </section>
+  </main>
+
+</body>
+</html>

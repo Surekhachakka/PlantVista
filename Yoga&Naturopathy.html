@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>/* General body and layout styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    
+    .logo img {
+      max-height: 50px;
+    }
+    
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    
+    nav ul li {
+      margin-right: 20px;
+    }
+    
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .navbar .actions a {
+      margin-left: 10px;
+      color: #fff;
+      text-decoration: none;
+      background-color: #555;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+    
+    .navbar .actions a.btn {
+      background-color: #007bff;
+    }
+    
+    .hero {
+      background: #f4f4f4;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    .hero-content h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #666;
+    }
+    
+    .intro {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .intro p {
+      font-size: 1rem;
+      color: #333;
+    }
+    
+    /* Slider styles */
+    .slider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .slider-content {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    
+    .category-box {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+      text-align: center;
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+    }
+    
+    .category-icon {
+      font-size: 2rem;
+    }
+    
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    
+    .prev {
+      left: 10px;
+    }
+    
+    .next {
+      right: 10px;
+    }
+    
+    /* Footer styles */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Yoga & Naturopathy - PlantVista</title>
+ 
+  
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <a href="#"><img src="logo.png" alt="PlantVista Logo"></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="Main.html">Home</a></li>
+          <li><a href="yoga.html">Yoga & Naturopathy</a></li>
+          <li><a href="#">Virtual Tours</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <a href="#" class="btn">Join us</a>
+        <a href="#" class="btn">Contact us</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Yoga & Naturopathy</h1>
+      <p>Explore the natural healing powers of Yoga and Naturopathy to nurture your mind, body, and spirit.</p>
+    </div>
+  </section>
+
+  <section class="intro">
+    <p>Yoga, originating from ancient India, integrates physical postures (Asanas), breathing techniques (Pranayama), and meditation to enhance flexibility, strength, and mental clarity. Naturopathy complements this by focusing on natural healing through remedies like herbs, nutrition, and hydrotherapy, along with customized diets. Together, Yoga and Naturopathy offer a holistic approach to health, combining physical practices and natural treatments to promote overall well-being.</p>
+  </section>
+
+  <section class="slider">
+    <button class="slider-button prev" onclick="moveSlide(-1)">&#10094;</button>
+    <div class="slider-content">
+      <div class="category-box">
+        <span class="category-icon">🧘‍♂️</span>
+        <h3><a class="c" href="asanas.html">Yoga Asanas</a></h3>
+        <p>Discover various Yoga poses for balance, flexibility, and strength.</p>
+      </div>
+      <div class="category-box">
+        <span class="category-icon">🍃</span>
+        <h3><a class="c" href="pranayama.html">Pranayama</a></h3>
+        <p>Learn breathing techniques for enhanced vitality and mental clarity.</p>
+      </div>
+      <div class="category-box">
+        <span class="category-icon">🌿</span>
+        <h3><a class="c" href="naturopathy.html">Naturopathy Remedies</a></h3>
+        <p>Explore natural remedies for various ailments using naturopathic principles.</p>
+      </div>
+      <div class="category-box">
+        <span class="category-icon">💧</span>
+        <h3><a class="c" href="hydrotherapy.html">Hydrotherapy</a></h3>
+        <p>Discover the therapeutic power of water in Naturopathy treatments.</p>
+      </div>
+      <div class="category-box">
+        <span class="category-icon">🍎</span>
+        <h3><a class="c" href="diet.html">Naturopathy Diet</a></h3>
+        <p>Learn about diet plans that promote healing and wellness.</p>
+      </div>
+      <div class="category-box">
+        <span class="category-icon">🧘‍♀️</span>
+        <h3><a class="c" href="holistic-wellness.html">Holistic Yoga Wellness</a></h3>
+        <p>Immerse yourself in a comprehensive approach to Yoga that integrates mental, physical, and spiritual practices.</p>
+      </div>
+    </div>
+    <button class="slider-button next" onclick="moveSlide(1)">&#10095;</button>
+  </section>
+
+  <footer>
+    <p>© 2024 PlantVista | All rights reserved</p>
+  </footer>
+
+
+    <script>let slideIndex = 0;
+
+      function moveSlide(n) {
+        const slides = document.querySelectorAll('.category-box');
+        const totalSlides = slides.length;
+        slideIndex = (slideIndex + n + totalSlides) % totalSlides;
+        document.querySelector('.slider-content').style.transform = `translateX(${-slideIndex * 100}%)`;
+      }</script>
+ 
+</body>
+</html>
